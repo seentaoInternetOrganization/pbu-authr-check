@@ -26,14 +26,14 @@ const schoolCookies = [
     'memberId'
 ];
 
-//准备一个盐值
-const salt = hashMD5('pbu_authr_salt');
 
 module.exports.authr_check = authr_check;
 
 const PBU_AUTHR_SIG = 'PBU_AUTHR_SIG';
 
 function authr_check(config) {
+    //准备一个盐值
+    const salt = hashMD5(config.authrCheckSalt);
 
     return function(req, res, next) {
         if (req.method === 'GET' ) {
