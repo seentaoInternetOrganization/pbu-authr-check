@@ -41,7 +41,8 @@ function authr_check(config) {
                 if (!req.cookies.PBU_AUTHR_SIG) {
                     //不存在SIG，query参数里也不存在p的话就跳至身份认证
                     res.redirect(appendQuery(config.authrUrl, {
-                        ticket: null
+                        ticket: null,
+                        redirectUrl: config.siteDomain,
                     },  { removeNull: true }));
                     return;
                 }else {
