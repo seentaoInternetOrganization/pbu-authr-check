@@ -71,8 +71,7 @@ function authr_check(config) {
                                 ticket: null
                             }, { removeNull: true }));
                             return;
-                        }
-                        else if (memberType !== config.memberTypeRequired) {
+                        }else if (memberType !== config.memberTypeRequired) {
                             //身份不符，跳转至身份认证
                             //先清掉旧数据
                             schoolCookies.forEach((item) => {
